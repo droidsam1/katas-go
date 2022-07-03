@@ -23,7 +23,15 @@ func TestLeapYear(t *testing.T) {
 		got := LeapYear(2020)
 
 		if got != true {
-			t.Errorf("Expected true, got false")
+			t.Errorf("Expected LeapYear to return true")
+		}
+	})
+
+	t.Run("should return false for special case of non leap years", func(t *testing.T) {
+		got := LeapYear(1900)
+
+		if got != false {
+			t.Errorf("Expected LeapYear to return false")
 		}
 	})
 }
