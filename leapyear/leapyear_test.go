@@ -18,4 +18,12 @@ func TestLeapYear(t *testing.T) {
 			t.Fatalf("Expected LeapYear to return false")
 		}
 	})
+
+	t.Run("should return true for leap years", func(t *testing.T) {
+		got := LeapYear(2020)
+
+		if got != true {
+			t.Errorf("Expected true, got false")
+		}
+	})
 }

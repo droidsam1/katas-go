@@ -1,5 +1,5 @@
 package leapyear
 
 func LeapYear(i int) bool {
-	return false
+	return i%4 == 0
 }
