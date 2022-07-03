@@ -17,7 +17,3 @@ func TestLeapYearShouldReturnFalseForNonLeapYears(t *testing.T) {
 		t.Fatalf("Expected LeapYear to return false")
 	}
 }
-
-func LeapYear(i int) bool {
-	return false
-}
