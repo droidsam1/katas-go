@@ -34,4 +34,12 @@ func TestLeapYear(t *testing.T) {
 			t.Errorf("Expected LeapYear to return false")
 		}
 	})
+
+	t.Run("should return false for special case of leap years", func(t *testing.T) {
+		got := LeapYear(1200)
+
+		if got != true {
+			t.Errorf("Expected LeapYear to return false")
+		}
+	})
 }
