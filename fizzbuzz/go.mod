@@ -1,3 +1,3 @@
-module example.com/fizzbuzz
+module example.com/main
 
 go 1.18
