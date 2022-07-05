@@ -7,11 +7,12 @@ import (
 func TestFizzBuzz(t *testing.T) {
 
 	t.Run("should return a number when for default", func(t *testing.T) {
+
 		input := 1
 
-		got := FizzBuzz(input)
+		result := FizzBuzz(input)
 
-		if got != "1" {
+		if result != "1" {
 			t.Fatalf("expected to return the number itself")
 		}
 	})
@@ -20,9 +21,9 @@ func TestFizzBuzz(t *testing.T) {
 
 		input := 3
 
-		got := FizzBuzz(input)
+		result := FizzBuzz(input)
 
-		if got != "Fizz" {
+		if result != "Fizz" {
 			t.Fatalf("expected to return the word Fizz")
 		}
 	})
@@ -30,12 +31,16 @@ func TestFizzBuzz(t *testing.T) {
 	t.Run("should return Buzz for multiples of five", func(t *testing.T) {
 		input := 5
 
-		got := FizzBuzz(input)
+		result := FizzBuzz(input)
 
-		if got != "Buzz" {
-			t.Fatalf("expected to resturn the word Buzz")
+		if result != "Buzz" {
+			t.Fatalf("expected to return the word Buzz")
 		}
 
 	})
-
+}
+func assertEquals(expected, result string, t *testing.T) {
+	if expected != result {
+		t.Fatalf("expected to return %v instead of %v", expected, result)
+	}
 }
