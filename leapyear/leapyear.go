@@ -1,5 +1,11 @@
 package leapyear
 
-func LeapYear(year int) bool {
+type Year int
+
+func LeapYear(year Year) bool {
 	return year%4 == 0 && year%100 != 0 || year%400 == 0
+}
+
+func (y Year) IsLeap() bool {
+	return false
 }
