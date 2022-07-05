@@ -14,9 +14,7 @@ func TestFizzBuzz(t *testing.T) {
 
 		expected := "1"
 
-		if result != expected {
-			t.Fatalf("expected to return the word %v", expected)
-		}
+		assertEquals(expected, result, t)
 	})
 
 	t.Run("should return Fizz for multiples of three", func(t *testing.T) {
@@ -27,9 +25,7 @@ func TestFizzBuzz(t *testing.T) {
 
 		expected := "Fizz"
 
-		if result != expected {
-			t.Fatalf("expected to return the word %v", expected)
-		}
+		assertEquals(expected, result, t)
 	})
 
 	t.Run("should return Buzz for multiples of five", func(t *testing.T) {
@@ -39,9 +35,7 @@ func TestFizzBuzz(t *testing.T) {
 
 		expected := "Buzz"
 
-		if result != expected {
-			t.Fatalf("expected to return the word %v", expected)
-		}
+		assertEquals(expected, result, t)
 
 	})
 }
