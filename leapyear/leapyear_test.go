@@ -4,7 +4,7 @@ import "testing"
 
 func TestLeapYear(t *testing.T) {
 	t.Run("should return a boolean", func(t *testing.T) {
-		got := LeapYear(1995)
+		got := Year(1995).IsLeap()
 
 		if got != false {
 			t.Fatalf("Expected LeapYear to return a boolean")
