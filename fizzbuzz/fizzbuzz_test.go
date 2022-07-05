@@ -12,8 +12,10 @@ func TestFizzBuzz(t *testing.T) {
 
 		result := FizzBuzz(input)
 
-		if result != "1" {
-			t.Fatalf("expected to return the number itself")
+		expected := "1"
+
+		if result != expected {
+			t.Fatalf("expected to return the word %v", expected)
 		}
 	})
 
@@ -23,8 +25,10 @@ func TestFizzBuzz(t *testing.T) {
 
 		result := FizzBuzz(input)
 
-		if result != "Fizz" {
-			t.Fatalf("expected to return the word Fizz")
+		expected := "Fizz"
+
+		if result != expected {
+			t.Fatalf("expected to return the word %v", expected)
 		}
 	})
 
@@ -33,8 +37,10 @@ func TestFizzBuzz(t *testing.T) {
 
 		result := FizzBuzz(input)
 
-		if result != "Buzz" {
-			t.Fatalf("expected to return the word Buzz")
+		expected := "Buzz"
+
+		if result != expected {
+			t.Fatalf("expected to return the word %v", expected)
 		}
 
 	})
