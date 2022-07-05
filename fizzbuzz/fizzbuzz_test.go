@@ -25,6 +25,16 @@ func TestFizzBuzz(t *testing.T) {
 		if got != "Fizz" {
 			t.Fatalf("expected to return the word Fizz")
 		}
+	})
+
+	t.Run("should return Buzz for multiples of five", func(t *testing.T) {
+		input := 5
+
+		got := FizzBuzz(input)
+
+		if got != "Buzz" {
+			t.Fatalf("expected to resturn the word Buzz")
+		}
 
 	})
 
