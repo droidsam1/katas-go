@@ -12,7 +12,7 @@ func TestLeapYear(t *testing.T) {
 	})
 
 	t.Run("should return false when parameter is a common year", func(t *testing.T) {
-		got := LeapYear(1995)
+		got := Year(1995).IsLeap()
 
 		if got != false {
 			t.Fatalf("Expected LeapYear to return false")
@@ -20,7 +20,7 @@ func TestLeapYear(t *testing.T) {
 	})
 
 	t.Run("should return true for leap years", func(t *testing.T) {
-		got := LeapYear(2020)
+		got := Year(2020).IsLeap()
 
 		if got != true {
 			t.Errorf("Expected LeapYear to return true")
@@ -28,7 +28,7 @@ func TestLeapYear(t *testing.T) {
 	})
 
 	t.Run("should return false for special case of non leap years", func(t *testing.T) {
-		got := LeapYear(1900)
+		got := Year(1900).IsLeap()
 
 		if got != false {
 			t.Errorf("Expected LeapYear to return false")
@@ -36,7 +36,7 @@ func TestLeapYear(t *testing.T) {
 	})
 
 	t.Run("should return false for special case of leap years", func(t *testing.T) {
-		got := LeapYear(1200)
+		got := Year(1200).IsLeap()
 
 		if got != true {
 			t.Errorf("Expected LeapYear to return false")
