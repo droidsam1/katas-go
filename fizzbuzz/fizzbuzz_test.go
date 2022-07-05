@@ -1,7 +1,6 @@
-package fizzbuzz_test
+package fizzbuzz
 
 import (
-	"strconv"
 	"testing"
 )
 
@@ -29,11 +28,4 @@ func TestFizzBuzz(t *testing.T) {
 
 	})
 
-}
-
-func FizzBuzz(input int) string {
-	if input%3 == 0 {
-		return "Fizz"
-	}
-	return strconv.Itoa(input)
 }
