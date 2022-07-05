@@ -36,7 +36,16 @@ func TestFizzBuzz(t *testing.T) {
 		expected := "Buzz"
 
 		assertEquals(expected, result, t)
+	})
 
+	t.Run("should return FizzBuzz for multiples of five and three", func(t *testing.T) {
+		input := 15
+
+		result := FizzBuzz(input)
+
+		expected := "FizzBuzz"
+
+		assertEquals(expected, result, t)
 	})
 }
 func assertEquals(expected, result string, t *testing.T) {
