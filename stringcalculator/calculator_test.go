@@ -68,6 +68,15 @@ func TestCalculator(t *testing.T) {
 
 		assertEquals(expected, got, t)
 	})
+
+	t.Run("should return the sum when a string wih a two numbers with a space between ", func(t *testing.T) {
+
+		got := Add("1, 2")
+
+		expected := 3
+
+		assertEquals(expected, got, t)
+	})
 }
 
 func assertEquals(expected, result int, t *testing.T) {

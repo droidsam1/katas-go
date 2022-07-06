@@ -14,7 +14,7 @@ func Add(input string) int {
 
 	result := 0
 	for _, n := range numbers {
-		number, _ := strconv.Atoi(n)
+		number, _ := strconv.Atoi(strings.Trim(n, " "))
 		result += number
 	}
 	return result
