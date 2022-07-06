@@ -32,6 +32,15 @@ func TestCalculator(t *testing.T) {
 
 		assertEquals(expected, got, t)
 	})
+
+	t.Run("should return the sum when a string wih a two numbers bigger than two digis", func(t *testing.T) {
+
+		got := Add("101,2010")
+
+		expected := 2111
+
+		assertEquals(expected, got, t)
+	})
 }
 
 func assertEquals(expected, result int, t *testing.T) {
