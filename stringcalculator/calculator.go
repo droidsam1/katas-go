@@ -1,8 +1,8 @@
 package main
 
 import (
+	"regexp"
 	"strconv"
-	"strings"
 )
 
 func Add(input string) int {
@@ -10,11 +10,13 @@ func Add(input string) int {
 		return 0
 	}
 
-	numbers := strings.Split(input, ",")
+	regularExpression, _ := regexp.Compile(`\d+`)
+
+	numbers := regularExpression.FindAllString(input, -1)
 
 	result := 0
 	for _, n := range numbers {
-		number, _ := strconv.Atoi(strings.Trim(n, " "))
+		number, _ := strconv.Atoi(n)
 		result += number
 	}
 	return result
