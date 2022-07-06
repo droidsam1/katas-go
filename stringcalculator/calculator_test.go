@@ -1,6 +1,10 @@
 package main
 
-import "testing"
+import (
+	"strconv"
+	"strings"
+	"testing"
+)
 
 func TestCalculator(t *testing.T) {
 
@@ -19,11 +23,27 @@ func TestCalculator(t *testing.T) {
 			t.Fatalf("expected to return the same number")
 		}
 	})
+
+	t.Run("should return the sum when a string wih a two numbers ", func(t *testing.T) {
+		got := Add("1,2")
+
+		if got != 3 {
+			t.Fatalf("expected to return 3")
+		}
+	})
 }
 
-func Add(number string) int {
-	if number == "" {
+func Add(input string) int {
+	if input == "" {
 		return 0
 	}
-	return 1
+
+	numbers := strings.Split(input, ",")
+
+	result := 0
+	for _, n := range numbers {
+		number, _ := strconv.Atoi(n)
+		result += number
+	}
+	return result
 }
