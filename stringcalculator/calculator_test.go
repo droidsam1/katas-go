@@ -115,7 +115,7 @@ func TestCalculator(t *testing.T) {
 		assertEquals(expected, got, t)
 	})
 
-	t.Run("should return an error when a negative number is present in input paramter", func(t *testing.T) {
+	t.Run("should return an error when a negative number is present in input parameter", func(t *testing.T) {
 
 		got, _ := Add("-1")
 
@@ -124,11 +124,19 @@ func TestCalculator(t *testing.T) {
 		assertEquals(expected, got, t)
 	})
 
-	t.Run("should return an error when a negative number is present in input paramter", func(t *testing.T) {
+	t.Run("should return an error when a negative number is present in input parameter", func(t *testing.T) {
 
 		_, err := Add("-1")
 
 		expected := "negatives not allowed: -1"
+		assertError(expected, err, t)
+	})
+
+	t.Run("should return an error when all negative numbers present in input paramter", func(t *testing.T) {
+
+		_, err := Add("-1,2,-3")
+
+		expected := "negatives not allowed: -1,-3"
 		assertError(expected, err, t)
 	})
 
