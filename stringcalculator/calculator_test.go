@@ -12,8 +12,18 @@ func TestCalculator(t *testing.T) {
 		}
 
 	})
+	t.Run("should accept a string wih a single number as input parameter", func(t *testing.T) {
+		got := Add("1")
+
+		if got != 1 {
+			t.Fatalf("expected to return the same number")
+		}
+	})
 }
 
-func Add(numbers string) int {
-	return 0
+func Add(number string) int {
+	if number == "" {
+		return 0
+	}
+	return 1
 }
