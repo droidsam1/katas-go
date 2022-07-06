@@ -1,8 +1,6 @@
 package main
 
 import (
-	"strconv"
-	"strings"
 	"testing"
 )
 
@@ -31,19 +29,4 @@ func TestCalculator(t *testing.T) {
 			t.Fatalf("expected to return 3")
 		}
 	})
-}
-
-func Add(input string) int {
-	if input == "" {
-		return 0
-	}
-
-	numbers := strings.Split(input, ",")
-
-	result := 0
-	for _, n := range numbers {
-		number, _ := strconv.Atoi(n)
-		result += number
-	}
-	return result
 }
