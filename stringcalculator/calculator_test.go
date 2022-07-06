@@ -41,6 +41,33 @@ func TestCalculator(t *testing.T) {
 
 		assertEquals(expected, got, t)
 	})
+
+	t.Run("should return the sum when a string wih a three numbers ", func(t *testing.T) {
+
+		got := Add("1,2,3")
+
+		expected := 6
+
+		assertEquals(expected, got, t)
+	})
+
+	t.Run("should return the sum when a string wih a four numbers ", func(t *testing.T) {
+
+		got := Add("1,2,3,4")
+
+		expected := 10
+
+		assertEquals(expected, got, t)
+	})
+
+	t.Run("should return the sum when a string wih an unkown amount of numbers ", func(t *testing.T) {
+
+		got := Add("0,1,1,2,3,5,8,13,21,34,55,89,144")
+
+		expected := 376
+
+		assertEquals(expected, got, t)
+	})
 }
 
 func assertEquals(expected, result int, t *testing.T) {
