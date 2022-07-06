@@ -30,3 +30,10 @@ func TestCalculator(t *testing.T) {
 		}
 	})
 }
+
+func assertEquals(expected, result int, t *testing.T) {
+
+	if expected != result {
+		t.Fatalf("expected to return %v, instead of %v", expected, result)
+	}
+}
