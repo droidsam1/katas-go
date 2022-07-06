@@ -95,6 +95,24 @@ func TestCalculator(t *testing.T) {
 
 		assertEquals(expected, got, t)
 	})
+
+	t.Run("should return the sum when a string of form //[delimiter]\n[numbers…] ", func(t *testing.T) {
+
+		got := Add("//;\n1;2")
+
+		expected := 3
+
+		assertEquals(expected, got, t)
+	})
+
+	t.Run("should return the sum when a string of form //[delimiter]\n[numbers…] when the delimiter part is optional", func(t *testing.T) {
+
+		got := Add("\n1;2")
+
+		expected := 3
+
+		assertEquals(expected, got, t)
+	})
 }
 
 func assertEquals(expected, result int, t *testing.T) {
